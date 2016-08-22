@@ -298,9 +298,7 @@
 <li><p><strong>va_start(argumentList, last_determine_param)</strong> : 使用argumentList指针指向函数参数列表中的第一个参数.</p>
 <ul>
 <li>说明 : 可变参数之前必须有一个或多个确定参数, last_determine_param是位于可变参数之前的最后一个固定参数( … 之前的最后一个参数). 调用va_start()时last_determine_param被用作第二个参数传入.</li>
-<li>函数参数列表中参数在内存中的顺序与函数声明时的顺序是一致的, 比如有一个可变参数函数的声明是 : </li>
-<li>void va_test(char a, char b, char c, …)</li>
-<li>则它的固定参数依次是a, b, c, last_determine_param为c, 因此就是 va_start(arg_ptr, c).</li>
+<li>函数参数列表中参数在内存中的顺序与函数声明时的顺序是一致的, 比如有一个可变参数函数的声明是: <strong>void va_test(char a, char b, char c, …)</strong>, 则它的固定参数依次是a, b, c, last_determine_param为c, 因此就是 va_start(arg_ptr, c).</li>
 </ul>
 </li>
 <li><p><strong>va_arg(argList, type)</strong> : 返回argumentList所指的当前可变参数, 返回类型为type, 并使指针argumentList指向可变参数列表中的下一个参数.</p>
@@ -471,99 +469,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/02/First-Post/" itemprop="url">
-                  First Post
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-02T23:57:32+08:00" content="2016-08-02">
-              2016-08-02
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/07/30/hello-world/" itemprop="url">
                   Hello World
                 </a>
@@ -686,7 +591,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
