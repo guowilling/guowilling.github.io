@@ -94,7 +94,7 @@ cocoa的API里使用到可变参数的地方
 <meta property="og:description" content="最近写了一个自定义的ActionSheet, 参考系统的UIActionSheet的创建方式设计API. 我们知道系统的UIAlertView是使用可变参数来接收最后一个参数的, 我一直也只是知道怎么用, 于是这次查资料了解了可变参数的实现原理.
 cocoa的API里使用到可变参数的地方
 123+ (instancetype)arrayWithObjects:(ObjectType)firstOb">
-<meta property="og:updated_time" content="2016-08-22T16:00:19.000Z">
+<meta property="og:updated_time" content="2016-08-24T16:18:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OC中可变参数的原理">
 <meta name="twitter:description" content="最近写了一个自定义的ActionSheet, 参考系统的UIActionSheet的创建方式设计API. 我们知道系统的UIAlertView是使用可变参数来接收最后一个参数的, 我一直也只是知道怎么用, 于是这次查资料了解了可变参数的实现原理.
@@ -315,7 +315,7 @@ cocoa的API里使用到可变参数的地方
 <li><strong>void va_end(va_list argptr);</strong></li>
 </ul>
 </blockquote>
-<p>它们都包含在头文件\<stdarg.h>.</stdarg.h></p>
+<p>它们都包含在头文件stdarg.h.</p>
 <p><strong>下面是自定义ActionSheet中可变参数的实际使用方式</strong></p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">+ (<span class="keyword">void</span>)sr_showActionSheetViewWithTitle:(<span class="built_in">NSString</span> *)title</div><div class="line">                               delegate:(<span class="keyword">id</span>&lt;SRActionSheetDelegate&gt;)delegate</div><div class="line">                      cancelButtonTitle:(<span class="built_in">NSString</span> *)cancelButtonTitle</div><div class="line">                 destructiveButtonTitle:(<span class="built_in">NSString</span> *)destructiveButtonTitle</div><div class="line">                      otherButtonTitles:(<span class="built_in">NSString</span> *)firstOtherButtonTitle, ... <span class="built_in">NS_REQUIRES_NIL_TERMINATION</span>;</div></pre></td></tr></table></figure>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">+ (<span class="keyword">void</span>)sr_showActionSheetViewWithTitle:(<span class="built_in">NSString</span> *)title</div><div class="line">                               delegate:(<span class="keyword">id</span>&lt;SRActionSheetDelegate&gt;)delegate</div><div class="line">                      cancelButtonTitle:(<span class="built_in">NSString</span> *)cancelButtonTitle</div><div class="line">                 destructiveButtonTitle:(<span class="built_in">NSString</span> *)destructiveButtonTitle</div><div class="line">                      otherButtonTitles:(<span class="built_in">NSString</span> *)firstOtherButtonTitle, ... <span class="built_in">NS_REQUIRES_NIL_TERMINATION</span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSMutableArray</span> *otherButtonTitles = [<span class="built_in">NSMutableArray</span> array];</div><div class="line">    va_list argumentList;</div><div class="line">    <span class="keyword">if</span> (firstOtherButtonTitle) &#123;</div><div class="line">        [otherButtonTitles addObject:firstOtherButtonTitle];</div><div class="line">        va_start(argumentList, firstOtherButtonTitle);</div><div class="line">        <span class="built_in">NSString</span> *nextOtherButtonTitle = <span class="literal">nil</span>;</div><div class="line">        <span class="keyword">while</span> ((nextOtherButtonTitle = va_arg(argumentList, <span class="built_in">NSString</span> *))) &#123;</div><div class="line">            [otherButtonTitles addObject:nextOtherButtonTitle];</div><div class="line">        &#125;</div><div class="line">        va_end(argumentList);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    [[[<span class="keyword">self</span> alloc] initWithTitle:title</div><div class="line">               cancelButtonTitle:cancelButtonTitle</div><div class="line">          destructiveButtonTitle:destructiveButtonTitle</div><div class="line">               otherButtonTitles:otherButtonTitles</div><div class="line">                        delegate:delegate] show];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -356,7 +356,7 @@ cocoa的API里使用到可变参数的地方
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/23/Objective-C-Style-Guide/" rel="prev" title="Objective-C Style Guide">
+              <a href="/2016/08/23/Objective-C Style Guide/" rel="prev" title="Objective-C Style Guide">
                 Objective-C Style Guide <i class="fa fa-chevron-right"></i>
               </a>
             
