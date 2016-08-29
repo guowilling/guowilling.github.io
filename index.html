@@ -238,6 +238,112 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/28/OC中的@符号/" itemprop="url">
+                  OC中的@符号
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-28T00:44:56+08:00" content="2016-08-28">
+              2016-08-28
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>我们在写 OC 代码时, 最常用到的一个特殊符号可能就是 @ 了吧, 下面总结一下, OC 中使用到 @ 符号的场景.</p>
+<h2 id="””"><a href="#””" class="headerlink" title="@””"></a>@””</h2><p>快速创建一个由引号内内容初始化的 NSString 对象.  </p>
+<h2 id="42-3-14-YES-’Z’"><a href="#42-3-14-YES-’Z’" class="headerlink" title="@42, @3.14, @YES, @’Z’"></a>@42, @3.14, @YES, @’Z’</h2><p>创建一个由对应类型初始化的 NSNumber 对象. </p>
+<p>例如 :</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@<span class="number">42</span>  == [<span class="built_in">NSNumber</span> numberWithInteger:<span class="number">42</span>]  </div><div class="line">@YES == [<span class="built_in">NSNumber</span> numberWithBool:<span class="literal">YES</span>]  </div><div class="line">@<span class="number">42</span>U == [<span class="built_in">NSNumber</span> numberWithUnsignedInt:<span class="number">42</span>U]</div></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title="@[]"></a>@[]</h2><p>创建一个由 <strong>,</strong> 分隔的对象列表作为内容的 NSArray 对象.</p>
+<p>例如 : </p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@[<span class="string">@"A"</span>, @NO, @<span class="number">2.718</span>] == [<span class="built_in">NSArray</span> arrayWithObjects:<span class="string">@"A"</span>, @NO, @<span class="number">2.718</span>, <span class="literal">nil</span>]</div></pre></td></tr></table></figure>
+<h2 id="-1"><a href="#-1" class="headerlink" title="@{}"></a>@{}</h2><p>创建一个由特定 <strong>键－值</strong> 对作为内容的 NSDictionary 对象.</p>
+<p>例如 : </p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@&#123;<span class="string">@"someKey"</span>: <span class="string">@"theValue"</span>&#125;</div></pre></td></tr></table></figure>
+<h2 id="-2"><a href="#-2" class="headerlink" title="@()"></a>@()</h2><p>自动装箱, 返回基于其值的合适的对象.</p>
+<p>例如 : </p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">char</span> * 返回 <span class="built_in">NSString</span>  </div><div class="line"><span class="keyword">int</span> 返回 <span class="built_in">NSNumber</span>  等等</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/23/Objective-C Style Guide/" itemprop="url">
                   Objective-C Style Guide
                 </a>
@@ -284,18 +390,12 @@
           
             <h1 id="Objective-C-Style-Guide"><a href="#Objective-C-Style-Guide" class="headerlink" title="Objective-C Style Guide"></a>Objective-C Style Guide</h1><p>最近看了很多OC方面的编码风格推荐, 个人认为编码规范不管对于个人开发还是团队开发都是非常重要的, 这里总结出来, 给大家提供一个参考.</p>
 <h2 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h2><p>使用美式英语.</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 推荐</span></div><div class="line"><span class="built_in">UIColor</span> *myColor = [<span class="built_in">UIColor</span> whiteColor];</div></pre></td></tr></table></figure>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 不推荐</span></div><div class="line"><span class="built_in">UIColor</span> *myColour = [<span class="built_in">UIColor</span> whiteColor];</div></pre></td></tr></table></figure>
-<hr>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 推荐</span></div><div class="line"><span class="built_in">UIColor</span> *myColor = [<span class="built_in">UIColor</span> whiteColor];</div><div class="line"></div><div class="line"><span class="comment">// 不推荐</span></div><div class="line"><span class="built_in">UIColor</span> *myColour = [<span class="built_in">UIColor</span> whiteColor];</div></pre></td></tr></table></figure>
 <h2 id="组织代码"><a href="#组织代码" class="headerlink" title="组织代码"></a>组织代码</h2><p>使用 <code>#pragma mark -</code> 组织代码.</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark - Lifecycle</span></div><div class="line">- (<span class="keyword">instancetype</span>)init &#123;&#125;</div><div class="line">- (<span class="keyword">void</span>)dealloc &#123;&#125;</div><div class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;&#125;</div><div class="line">- (<span class="keyword">void</span>)viewWillAppear:(<span class="built_in">BOOL</span>)animated &#123;&#125;</div><div class="line">- (<span class="keyword">void</span>)viewDidAppear:(<span class="built_in">BOOL</span>)animated &#123;&#125;</div><div class="line">- (<span class="keyword">void</span>)didReceiveMemoryWarning &#123;&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - Custom Accessors</span></div><div class="line">- (<span class="keyword">void</span>)setCustomProperty:(<span class="keyword">id</span>)value &#123;&#125;</div><div class="line">- (<span class="keyword">id</span>)customProperty &#123;&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - IBActions</span></div><div class="line"></div><div class="line">- (<span class="keyword">IBAction</span>)submitData:(<span class="keyword">id</span>)sender &#123;&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - Public</span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)publicMethod &#123;&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - Private</span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)privateMethod &#123;&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - UITextFieldDelegate</span></div><div class="line"><span class="comment">//...</span></div><div class="line"></div><div class="line"><span class="meta">#pragma mark - UITableViewDataSource</span></div><div class="line"><span class="comment">//...</span></div><div class="line"></div><div class="line"><span class="meta">#pragma mark - UITableViewDelegate</span></div><div class="line"><span class="comment">//...</span></div><div class="line"></div><div class="line"><span class="meta">#pragma mark - NSCopying</span></div><div class="line"></div><div class="line">- (<span class="keyword">id</span>)copyWithZone:(<span class="built_in">NSZone</span> *)zone &#123;&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - NSObject</span></div><div class="line"></div><div class="line">- (<span class="built_in">NSString</span> *)description &#123;&#125;</div></pre></td></tr></table></figure>
-<hr>
-<h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">if (!error) &#123;</div><div class="line">    return success;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 不推荐</div><div class="line">if (!error)</div><div class="line">    return success;</div><div class="line">    </div><div class="line">// 或</div><div class="line">if (!error) return success;</div></pre></td></tr></table></figure>
-<hr>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark - Lifecycle</span></div><div class="line"></div><div class="line">- (<span class="keyword">instancetype</span>)init &#123;&#125;</div><div class="line">- (<span class="keyword">void</span>)dealloc &#123;&#125;</div><div class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;&#125;</div><div class="line">- (<span class="keyword">void</span>)viewWillAppear:(<span class="built_in">BOOL</span>)animated &#123;&#125;</div><div class="line">- (<span class="keyword">void</span>)viewDidAppear:(<span class="built_in">BOOL</span>)animated &#123;&#125;</div><div class="line">- (<span class="keyword">void</span>)didReceiveMemoryWarning &#123;&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - Custom Accessors</span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setCustomProperty:(<span class="keyword">id</span>)value &#123;&#125;</div><div class="line">- (<span class="keyword">id</span>)customProperty &#123;&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - IBActions</span></div><div class="line"></div><div class="line">- (<span class="keyword">IBAction</span>)submitData:(<span class="keyword">id</span>)sender &#123;&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - Public</span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)publicMethod &#123;&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - Private</span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)privateMethod &#123;&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - UITableViewDataSource</span></div><div class="line"><span class="comment">//...</span></div><div class="line"></div><div class="line"><span class="meta">#pragma mark - UITableViewDelegate</span></div><div class="line"><span class="comment">//...</span></div><div class="line"></div><div class="line"><span class="meta">#pragma mark - NSCopying</span></div><div class="line"></div><div class="line">- (<span class="keyword">id</span>)copyWithZone:(<span class="built_in">NSZone</span> *)zone &#123;&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - NSObject</span></div><div class="line"></div><div class="line">- (<span class="built_in">NSString</span> *)description &#123;&#125;</div></pre></td></tr></table></figure>
+<h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">if (!error) &#123;</div><div class="line">    return success;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 不推荐</div><div class="line">if (!error)</div><div class="line">    return success;</div><div class="line">    </div><div class="line">// 或</div><div class="line">if (!error) return success;</div></pre></td></tr></table></figure>
 <h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>方法声明中, 应该在（-/+ 符号）的后面留一个空格.</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 例如</span></div><div class="line">- (<span class="keyword">void</span>)setExampleText:(<span class="built_in">NSString</span> *)text image:(<span class="built_in">UIImage</span> *)image;</div></pre></td></tr></table></figure>
-<hr>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setExampleText:(<span class="built_in">NSString</span> *)text image:(<span class="built_in">UIImage</span> *)image;</div></pre></td></tr></table></figure>
 <h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul>
 <li><p>变量应该尽可能的用描述性的语言命名, 应该避免使用单字母来命名变量除了用于 <code>for()</code> 循环里.</p>
 </li>
@@ -304,62 +404,44 @@
 <li><p>属性定义无论在何时都应该是用来代替实例变量定义, 应该避免直接使用实例变量, 除非在初始化方法中（<code>init</code>, <code>initWithCoder:</code>等), <code>dealloc</code> 方法中和实例变量对应的 <code>setter</code> 和 <code>getter</code> 方法中.</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">@interface NYTSection: NSObject</div><div class="line"></div><div class="line">@property (nonatomic) NSString *headLine;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 不推荐</div><div class="line">@interface NYTSection : NSObject &#123;</div><div class="line">    NSString * headLine;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">@interface NYTSection: NSObject</div><div class="line"></div><div class="line">@property (nonatomic) NSString *headLine;</div><div class="line"></div><div class="line">@end</div><div class="line"></div><div class="line">// 不推荐</div><div class="line">@interface NYTSection : NSObject &#123;</div><div class="line">    NSString * headLine;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h2><p>遵循 Apple 命名规范</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">UIButton *settingsButton;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 不推荐</div><div class="line">UIButton *setBut;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">UIButton *settingsButton;</div><div class="line"></div><div class="line">// 不推荐</div><div class="line">UIButton *setBut;</div></pre></td></tr></table></figure>
 <p>字母前缀(例如<code>SR</code>)应该用于类名和常量, 但是 Core Data 的实体名应该忽略前缀.<br>常量应该使用驼峰式命名规范, 要与类名有相关性要见面知意.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">static const NSTimeInterval SRNavigationFadeAnimationDuration = 0.2;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 不推荐</div><div class="line">static const NSTimeInterval fadetime = 1.7;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">static const NSTimeInterval SRNavigationFadeAnimationDuration = 0.2;</div><div class="line"></div><div class="line">// 不推荐</div><div class="line">static const NSTimeInterval fadetime = 1.7;</div></pre></td></tr></table></figure>
 <ul>
 <li>属性和局部变量应该使用开头字母小写的驼峰式命名规范.  </li>
 <li>实例变量应该使用开头字母小写的驼峰式命名规范，并且前缀是下划线.  </li>
 <li>局部变量不应该包含下划线.</li>
 </ul>
-<hr>
 <h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>注释应该是用来解释<strong>为什么</strong>, 而不是用来说明<strong>是什么</strong>.</p>
 <p><strong>init 和 dealloc</strong><br><code>dealloc</code> 方法应该放在 <code>implementation</code> 的上面, <code>init</code> 应该直接放在 <code>dealloc</code> 方法的下面.  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">- (instancetype)init &#123;</div><div class="line">    self = [super init]; // or call the designated initalizer</div><div class="line">    if (self) &#123;</div><div class="line">        // Custom initialization</div><div class="line">    &#125;</div><div class="line">    return self;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- (instancetype)init &#123;</div><div class="line">    self = [super init]; // or call the designated initalizer</div><div class="line">    if (self) &#123;</div><div class="line">        // Custom initialization</div><div class="line">    &#125;</div><div class="line">    return self;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="文字变量"><a href="#文字变量" class="headerlink" title="文字变量"></a>文字变量</h2><ul>
 <li><code>NSString</code>, <code>NSDictionary</code>, <code>NSArray</code>, 和 <code>NSNumber</code> 这些文字变量无论在何时都应该被用来创建不可变的实例对象.     </li>
 <li>注意不要把 <code>nil</code> 传入到了 <code>NSArray</code> 和 <code>NSDictionary</code> 中，因为这样会导致c程序崩溃.</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 例如</div><div class="line">NSArray *names = @[@&quot;Brian&quot;, @&quot;Matt&quot;, @&quot;Chris&quot;, @&quot;Alex&quot;, @&quot;Steve&quot;, @&quot;Paul&quot;];</div><div class="line">NSDictionary *productManagers = @&#123;@&quot;iPhone&quot; : @&quot;Kate&quot;, @&quot;iPad&quot; : @&quot;Kamal&quot;, @&quot;Mobile Web&quot; : @&quot;Bill&quot;&#125;;</div><div class="line">NSNumber *shouldUseLiterals = @YES;</div><div class="line">NSNumber *buildingZIPCode = @10018;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 不推荐</div><div class="line">NSArray *names = [NSArray arrayWithObjects:@&quot;Brian&quot;, @&quot;Matt&quot;, @&quot;Chris&quot;, @&quot;Alex&quot;, @&quot;Steve&quot;, @&quot;Paul&quot;, nil];</div><div class="line">NSDictionary *productManagers = [NSDictionary dictionaryWithObjectsAndKeys: @&quot;Kate&quot;, @&quot;iPhone&quot;, @&quot;Kamal&quot;, @&quot;iPad&quot;, @&quot;Bill&quot;, @&quot;Mobile Web&quot;, nil];</div><div class="line">NSNumber *shouldUseLiterals = [NSNumber numberWithBool:YES];</div><div class="line">NSNumber *buildingZIPCode = [NSNumber numberWithInteger:10018];</div></pre></td></tr></table></figure>
-<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">NSArray *names = @[@&quot;Brian&quot;, @&quot;Matt&quot;, @&quot;Chris&quot;, @&quot;Alex&quot;, @&quot;Steve&quot;, @&quot;Paul&quot;];</div><div class="line">NSDictionary *productManagers = @&#123;@&quot;iPhone&quot; : @&quot;Kate&quot;, @&quot;iPad&quot; : @&quot;Kamal&quot;, @&quot;Mobile Web&quot; : @&quot;Bill&quot;&#125;;</div><div class="line">NSNumber *shouldUseLiterals = @YES;</div><div class="line">NSNumber *buildingZIPCode = @10018;</div><div class="line"></div><div class="line">// 不推荐</div><div class="line">NSArray *names = [NSArray arrayWithObjects:@&quot;Brian&quot;, @&quot;Matt&quot;, @&quot;Chris&quot;, @&quot;Alex&quot;, @&quot;Steve&quot;, @&quot;Paul&quot;, nil];</div><div class="line">NSDictionary *productManagers = [NSDictionary dictionaryWithObjectsAndKeys: @&quot;Kate&quot;, @&quot;iPhone&quot;, @&quot;Kamal&quot;, @&quot;iPad&quot;, @&quot;Bill&quot;, @&quot;Mobile Web&quot;, nil];</div><div class="line">NSNumber *shouldUseLiterals = [NSNumber numberWithBool:YES];</div><div class="line">NSNumber *buildingZIPCode = [NSNumber numberWithInteger:10018];</div></pre></td></tr></table></figure>
 <h2 id="CGRect-函数"><a href="#CGRect-函数" class="headerlink" title="CGRect 函数"></a>CGRect 函数</h2><p>当访问 <code>x</code>, <code>y</code>, <code>width</code>，<code>height</code>，应该使用 <code>CGGeometry</code> 函数，而不应该直接访问结构的成员.</p>
-<figure class="highlight plain"><figcaption><span>c</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">CGRect frame = self.view.frame;</div><div class="line">CGFloat x = CGRectGetMinX(frame);</div><div class="line">CGFloat y = CGRectGetMinY(frame);</div><div class="line">CGFloat width = CGRectGetWidth(frame);</div><div class="line">CGFloat height = CGRectGetHeight(frame);</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><figcaption><span>c</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 不推荐</div><div class="line">CGRect frame = self.view.frame;</div><div class="line">CGFloat x = frame.origin.x;</div><div class="line">CGFloat y = frame.origin.y;</div><div class="line">CGFloat width = frame.size.width;</div><div class="line">CGFloat height = frame.size.height;</div></pre></td></tr></table></figure>
-<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">CGRect frame = self.view.frame;</div><div class="line">CGFloat x = CGRectGetMinX(frame);</div><div class="line">CGFloat y = CGRectGetMinY(frame);</div><div class="line">CGFloat width = CGRectGetWidth(frame);</div><div class="line">CGFloat height = CGRectGetHeight(frame);</div><div class="line"></div><div class="line">// 不推荐</div><div class="line">CGRect frame = self.view.frame;</div><div class="line">CGFloat x = frame.origin.x;</div><div class="line">CGFloat y = frame.origin.y;</div><div class="line">CGFloat width = frame.size.width;</div><div class="line">CGFloat height = frame.size.height;</div></pre></td></tr></table></figure>
 <h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>常量和宏都可以的情况下, 推荐使用常量.  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">static NSString * const NYTAboutViewControllerCompanyName = @&quot;The New York Times Company&quot;;</div><div class="line"></div><div class="line">static const CGFloat NYTImageThumbnailHeight = 50.0;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 不推荐</div><div class="line">#define CompanyName @&quot;The New York Times Company&quot;</div><div class="line"></div><div class="line">#define thumbnailHeight 2</div></pre></td></tr></table></figure>
-<hr>
-<h2 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 枚举类型</div><div class="line">typedef NS_ENUM(NSInteger, SRRequestState) &#123;</div><div class="line">    SRRequestStateInactive,</div><div class="line">    SRRequestStateLoading</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">static NSString * const NYTAboutViewControllerCompanyName = @&quot;The New York Times Company&quot;;</div><div class="line">static const CGFloat NYTImageThumbnailHeight = 50.0;</div><div class="line"></div><div class="line">// 不推荐</div><div class="line">#define CompanyName @&quot;The New York Times Company&quot;</div><div class="line">#define thumbnailHeight 2</div></pre></td></tr></table></figure>
+<h2 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">typedef NS_ENUM(NSInteger, SRRequestState) &#123;</div><div class="line">    SRRequestStateInactive,</div><div class="line">    SRRequestStateLoading</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <h2 id="Case-语句"><a href="#Case-语句" class="headerlink" title="Case 语句"></a>Case 语句</h2><p>当在<code>switch</code>中使用枚举类型的时候 <code>default</code> 并不需要. </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// 例如  </div><div class="line">SRLeftMenuTopItemType menuType = SRTLeftMenuTopItemMain;</div><div class="line">switch (menuType) &#123;</div><div class="line">	case RWTLeftMenuTopItemMain:</div><div class="line">		// ...</div><div class="line">		break;</div><div class="line">	case RWTLeftMenuTopItemShows:</div><div class="line">    	// ...</div><div class="line">    	break;</div><div class="line">	case RWTLeftMenuTopItemSchedule:</div><div class="line">    	// ...</div><div class="line">    	break;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">SRLeftMenuTopItemType menuType = SRTLeftMenuTopItemMain;</div><div class="line">switch (menuType) &#123;</div><div class="line">	case RWTLeftMenuTopItemMain:</div><div class="line">		// ...</div><div class="line">		break;</div><div class="line">	case RWTLeftMenuTopItemShows:</div><div class="line">    	// ...</div><div class="line">    	break;</div><div class="line">	case RWTLeftMenuTopItemSchedule:</div><div class="line">    	// ...</div><div class="line">    	break;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="布尔值判断"><a href="#布尔值判断" class="headerlink" title="布尔值判断"></a>布尔值判断</h2><ul>
 <li>既然 <code>nil</code> 等同于 <code>NO</code> 那就没有必要在条件语句中进行比较  </li>
 <li>永远不要直接把某些东西与 <code>YES</code> 相比较.  </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">if (!someObject) &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 不推荐</div><div class="line">if (someObject == nil) &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">if (!someObject) &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 不推荐</div><div class="line">if (someObject == nil) &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><code>BOOL</code> 的例子</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">if (isAwesome)</div><div class="line"></div><div class="line">if (![someObject boolValue])</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 不推荐</div><div class="line">if (isAwesome == YES) </div><div class="line"></div><div class="line">if ([someObject boolValue] == NO)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">if (isAwesome)</div><div class="line">if (![someObject boolValue])</div><div class="line"></div><div class="line">// 不推荐</div><div class="line">if (isAwesome == YES) </div><div class="line">if ([someObject boolValue] == NO)</div></pre></td></tr></table></figure>
 <p><code>BOOL</code> 属性的名字应该取名为形容词, 属性名可以忽略 ‘is’ 前缀, 但 <code>getter</code> 方法要使用传统的命名.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">@property (assign, getter=isEditable) BOOL editable;</div></pre></td></tr></table></figure>
-<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property (assign, getter=isEditable) BOOL editable;</div></pre></td></tr></table></figure>
 <h2 id="单例"><a href="#单例" class="headerlink" title="单例"></a>单例</h2><p>单例对象应该使用安全线程机制来创建它们的共享实例.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// 例如</div><div class="line">+ (instancetype)sharedInstance &#123;</div><div class="line">   static id sharedInstance = nil;</div><div class="line">   static dispatch_once_t onceToken;</div><div class="line">   dispatch_once(&amp;onceToken, ^&#123;</div><div class="line">      sharedInstance = [[self alloc] init];</div><div class="line">   &#125;);</div><div class="line">   return sharedInstance;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">+ (instancetype)sharedInstance &#123;</div><div class="line">   static id sharedInstance = nil;</div><div class="line">   static dispatch_once_t onceToken;</div><div class="line">   dispatch_once(&amp;onceToken, ^&#123;</div><div class="line">      sharedInstance = [[self alloc] init];</div><div class="line">   &#125;);</div><div class="line">   return sharedInstance;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这能够防止某些时候可能出现各种程序崩溃的问题</p>
 <p><strong>(未完持续更新)</strong></p>
-<hr>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
 <p>官方 OC Style Guides:  </p>
 <ul>
@@ -506,7 +588,7 @@
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">+ (<span class="keyword">void</span>)sr_showActionSheetViewWithTitle:(<span class="built_in">NSString</span> *)title</div><div class="line">                               delegate:(<span class="keyword">id</span>&lt;SRActionSheetDelegate&gt;)delegate</div><div class="line">                      cancelButtonTitle:(<span class="built_in">NSString</span> *)cancelButtonTitle</div><div class="line">                 destructiveButtonTitle:(<span class="built_in">NSString</span> *)destructiveButtonTitle</div><div class="line">                      otherButtonTitles:(<span class="built_in">NSString</span> *)firstOtherButtonTitle, ... <span class="built_in">NS_REQUIRES_NIL_TERMINATION</span>;</div></pre></td></tr></table></figure>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">+ (<span class="keyword">void</span>)sr_showActionSheetViewWithTitle:(<span class="built_in">NSString</span> *)title</div><div class="line">                               delegate:(<span class="keyword">id</span>&lt;SRActionSheetDelegate&gt;)delegate</div><div class="line">                      cancelButtonTitle:(<span class="built_in">NSString</span> *)cancelButtonTitle</div><div class="line">                 destructiveButtonTitle:(<span class="built_in">NSString</span> *)destructiveButtonTitle</div><div class="line">                      otherButtonTitles:(<span class="built_in">NSString</span> *)firstOtherButtonTitle, ... <span class="built_in">NS_REQUIRES_NIL_TERMINATION</span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSMutableArray</span> *otherButtonTitles = [<span class="built_in">NSMutableArray</span> array];</div><div class="line">    va_list argumentList;</div><div class="line">    <span class="keyword">if</span> (firstOtherButtonTitle) &#123;</div><div class="line">        [otherButtonTitles addObject:firstOtherButtonTitle];</div><div class="line">        va_start(argumentList, firstOtherButtonTitle);</div><div class="line">        <span class="built_in">NSString</span> *nextOtherButtonTitle = <span class="literal">nil</span>;</div><div class="line">        <span class="keyword">while</span> ((nextOtherButtonTitle = va_arg(argumentList, <span class="built_in">NSString</span> *))) &#123;</div><div class="line">            [otherButtonTitles addObject:nextOtherButtonTitle];</div><div class="line">        &#125;</div><div class="line">        va_end(argumentList);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    [[[<span class="keyword">self</span> alloc] initWithTitle:title</div><div class="line">               cancelButtonTitle:cancelButtonTitle</div><div class="line">          destructiveButtonTitle:destructiveButtonTitle</div><div class="line">               otherButtonTitles:otherButtonTitles</div><div class="line">                        delegate:delegate] show];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>传送门</strong></p>
-<p>本文Demo:<a href="https://github.com/guowilling/VariableArgumentDemo" target="_blank" rel="external"><strong>VariableArgumentDemo</strong></a></p>
+<p>本文Demo:<a href="https://github.com/guowilling/VariableArgument" target="_blank" rel="external"><strong>VariableArgument</strong></a></p>
 <p>自定义ActionSheet:<a href="https://github.com/guowilling/SRActionSheet" target="_blank" rel="external"><strong>SRActionSheet</strong></a></p>
 <p>Have Fun.</p>
 
@@ -777,7 +859,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
