@@ -84,28 +84,40 @@
 
 
 
-<meta name="description" content="我们在写 OC 代码时, 最常用到的一个特殊符号可能就是 @ 了吧, 下面总结一下, OC 中使用到 @ 符号的场景.
-@””快速创建一个由引号内内容初始化的 NSString 对象.  
-@42, @3.14, @YES, @’Z’创建一个由对应类型初始化的 NSNumber 对象. 
-例如 :
-123@42  == [NSNumber numberWithInteger:42]  @YES =">
+<meta name="description" content="题目
+现有两个非常大的整数, 不论使用 int / long / long long 都无法存储, 该如何相加?
+
+思路
+假设有两个整数 a 和 b , a 的位数大于 b, 那么 a + b 的位数最多为 a + 1,也就是说两个整数相加的结果的位数最多比较大的那个整数的位数大1.
+因此, 我们可以使用拆分法, 把两个整数拆分成多段, 分段相加.
+
+比如
+a = 123456789  b = 5">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OC中的@符号">
-<meta property="og:url" content="http://yoursite.com/2016/08/28/OC中的@符号/index.html">
+<meta property="og:title" content=" 两个大整数相加">
+<meta property="og:url" content="http://yoursite.com/2016/09/20/两个大整数相加/index.html">
 <meta property="og:site_name" content="WILLING's BLOG">
-<meta property="og:description" content="我们在写 OC 代码时, 最常用到的一个特殊符号可能就是 @ 了吧, 下面总结一下, OC 中使用到 @ 符号的场景.
-@””快速创建一个由引号内内容初始化的 NSString 对象.  
-@42, @3.14, @YES, @’Z’创建一个由对应类型初始化的 NSNumber 对象. 
-例如 :
-123@42  == [NSNumber numberWithInteger:42]  @YES =">
-<meta property="og:updated_time" content="2016-08-27T16:59:35.000Z">
+<meta property="og:description" content="题目
+现有两个非常大的整数, 不论使用 int / long / long long 都无法存储, 该如何相加?
+
+思路
+假设有两个整数 a 和 b , a 的位数大于 b, 那么 a + b 的位数最多为 a + 1,也就是说两个整数相加的结果的位数最多比较大的那个整数的位数大1.
+因此, 我们可以使用拆分法, 把两个整数拆分成多段, 分段相加.
+
+比如
+a = 123456789  b = 5">
+<meta property="og:updated_time" content="2016-09-19T16:51:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OC中的@符号">
-<meta name="twitter:description" content="我们在写 OC 代码时, 最常用到的一个特殊符号可能就是 @ 了吧, 下面总结一下, OC 中使用到 @ 符号的场景.
-@””快速创建一个由引号内内容初始化的 NSString 对象.  
-@42, @3.14, @YES, @’Z’创建一个由对应类型初始化的 NSNumber 对象. 
-例如 :
-123@42  == [NSNumber numberWithInteger:42]  @YES =">
+<meta name="twitter:title" content=" 两个大整数相加">
+<meta name="twitter:description" content="题目
+现有两个非常大的整数, 不论使用 int / long / long long 都无法存储, 该如何相加?
+
+思路
+假设有两个整数 a 和 b , a 的位数大于 b, 那么 a + b 的位数最多为 a + 1,也就是说两个整数相加的结果的位数最多比较大的那个整数的位数大1.
+因此, 我们可以使用拆分法, 把两个整数拆分成多段, 分段相加.
+
+比如
+a = 123456789  b = 5">
 
 
 
@@ -126,9 +138,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/28/OC中的@符号/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/09/20/两个大整数相加/"/>
 
-  <title> OC中的@符号 | WILLING's BLOG </title>
+  <title>  两个大整数相加 | WILLING's BLOG </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -238,7 +250,7 @@
             
             
               
-                OC中的@符号
+                 两个大整数相加
               
             
           </h1>
@@ -250,8 +262,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-28T00:44:56+08:00" content="2016-08-28">
-              2016-08-28
+            <time itemprop="dateCreated" datetime="2016-09-20T00:51:17+08:00" content="2016-09-20">
+              2016-09-20
             </time>
           </span>
 
@@ -278,20 +290,20 @@
       
 
       
-        <p>我们在写 OC 代码时, 最常用到的一个特殊符号可能就是 @ 了吧, 下面总结一下, OC 中使用到 @ 符号的场景.</p>
-<h2 id="””"><a href="#””" class="headerlink" title="@””"></a>@””</h2><p>快速创建一个由引号内内容初始化的 NSString 对象.  </p>
-<h2 id="42-3-14-YES-’Z’"><a href="#42-3-14-YES-’Z’" class="headerlink" title="@42, @3.14, @YES, @’Z’"></a>@42, @3.14, @YES, @’Z’</h2><p>创建一个由对应类型初始化的 NSNumber 对象. </p>
-<p>例如 :</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@<span class="number">42</span>  == [<span class="built_in">NSNumber</span> numberWithInteger:<span class="number">42</span>]  </div><div class="line">@YES == [<span class="built_in">NSNumber</span> numberWithBool:<span class="literal">YES</span>]  </div><div class="line">@<span class="number">42</span>U == [<span class="built_in">NSNumber</span> numberWithUnsignedInt:<span class="number">42</span>U]</div></pre></td></tr></table></figure>
-<h2 id=""><a href="#" class="headerlink" title="@[]"></a>@[]</h2><p>创建一个由 <strong>,</strong> 分隔的对象列表作为内容的 NSArray 对象.</p>
-<p>例如 : </p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@[<span class="string">@"A"</span>, @NO, @<span class="number">2.718</span>] == [<span class="built_in">NSArray</span> arrayWithObjects:<span class="string">@"A"</span>, @NO, @<span class="number">2.718</span>, <span class="literal">nil</span>]</div></pre></td></tr></table></figure>
-<h2 id="-1"><a href="#-1" class="headerlink" title="@{}"></a>@{}</h2><p>创建一个由特定 <strong>键－值</strong> 对作为内容的 NSDictionary 对象.</p>
-<p>例如 : </p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@&#123;<span class="string">@"someKey"</span>: <span class="string">@"theValue"</span>&#125;</div></pre></td></tr></table></figure>
-<h2 id="-2"><a href="#-2" class="headerlink" title="@()"></a>@()</h2><p>自动装箱, 返回基于其值的合适的对象.</p>
-<p>例如 : </p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">char</span> * 返回 <span class="built_in">NSString</span>  </div><div class="line"><span class="keyword">int</span> 返回 <span class="built_in">NSNumber</span>  等等</div></pre></td></tr></table></figure>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
+<p>现有两个非常大的整数, 不论使用 int / long / long long 都无法存储, 该如何相加?</p>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><blockquote>
+<p>假设有两个整数 a 和 b , a 的位数大于 b, 那么 a + b 的位数最多为 a + 1,<br>也就是说两个整数相加的结果的位数最多比较大的那个整数的位数大1.</p>
+<p>因此, 我们可以使用拆分法, 把两个整数拆分成多段, 分段相加.</p>
+</blockquote>
+<h2 id="比如"><a href="#比如" class="headerlink" title="比如"></a>比如</h2><blockquote>
+<p>a = 123456789  b = 5555555</p>
+<p>我们把整数拆分成 <strong>3</strong> 位数一段, 那么 a = 123/456/789, b = 5/555/555.</p>
+<p>分段相加, c = 123+5 / 456+555 / 789+555 = 128/1011/1344</p>
+<p>我们发现 456+555=1011 和 789+555=1344 发生了进位, 所以我们把进位的 1 和高段相加, 128+1=129, 011+1=012 所以最终结果就为 129012344</p>
+</blockquote>
+
       
     </div>
 
@@ -316,16 +328,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/23/Objective-C Style Guide/" rel="next" title="Objective-C Style Guide">
-                <i class="fa fa-chevron-left"></i> Objective-C Style Guide
+              <a href="/2016/08/30/记不住的英文月份星期/" rel="next" title="记不住的英文月份星期">
+                <i class="fa fa-chevron-left"></i> 记不住的英文月份星期
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/30/记不住的英文月份星期/" rel="prev" title="记不住的英文月份星期">
-                记不住的英文月份星期 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/09/22/iOS-多线程基础知识/" rel="prev" title="iOS 多线程基础知识">
+                iOS 多线程基础知识 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -394,7 +406,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -446,7 +458,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#””"><span class="nav-number">1.</span> <span class="nav-text">@””</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#42-3-14-YES-’Z’"><span class="nav-number">2.</span> <span class="nav-text">@42, @3.14, @YES, @’Z’</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.</span> <span class="nav-text">@[]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-1"><span class="nav-number">4.</span> <span class="nav-text">@{}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-2"><span class="nav-number">5.</span> <span class="nav-text">@()</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比如"><span class="nav-number">3.</span> <span class="nav-text">比如</span></a></li></ol></div>
             
           </div>
         </section>
