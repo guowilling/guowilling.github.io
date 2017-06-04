@@ -228,8 +228,194 @@
             
               
                 
-                <a class="post-title-link" href="/2016/11/25/iOS-国际化的那些事儿/" itemprop="url">
-                  iOS 国际化的那些事儿
+                <a class="post-title-link" href="/2016/12/23/GCD-小手册/" itemprop="url">
+                  GCD 小手册
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-23T00:36:38+08:00" content="2016-12-23">
+              2016-12-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/09/ObjC-中的循环引用/" itemprop="url">
+                  ObjC 中的循环引用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-09T01:46:57+08:00" content="2016-12-09">
+              2016-12-09
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/25/iOS-App-国际化的那些事儿/" itemprop="url">
+                  iOS App 国际化的那些事儿
                 </a>
               
             
@@ -272,8 +458,7 @@
       
         
           
-            <p><strong>应用中切换语言</strong></p>
-
+            
           
         
       
@@ -515,351 +700,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/20/两个大整数相加/" itemprop="url">
-                   两个大整数相加
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-20T00:51:17+08:00" content="2016-09-20">
-              2016-09-20
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
-<p>现有两个非常大的整数, 不论使用 int / long / long long 都无法存储, 该如何相加?</p>
-</blockquote>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><blockquote>
-<p>假设有两个整数 a 和 b , a 的位数大于 b, 那么 a + b 的位数最多为 a + 1,<br>也就是说两个整数相加的结果的位数最多比较大的那个整数的位数大1.</p>
-<p>因此, 我们可以使用拆分法, 把两个整数拆分成多段, 分段相加.</p>
-</blockquote>
-<h2 id="比如"><a href="#比如" class="headerlink" title="比如"></a>比如</h2><blockquote>
-<p>a = 123456789  b = 5555555</p>
-<p>我们把整数拆分成 <strong>3</strong> 位数一段, 那么 a = 123/456/789, b = 5/555/555.</p>
-<p>分段相加, c = 123+5 / 456+555 / 789+555 = 128/1011/1344</p>
-<p>我们发现 456+555=1011 和 789+555=1344 发生了进位, 所以我们把进位的 1 和高段相加, 128+1=129, 011+1=012 所以最终结果就为 129012344</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/30/记不住的英文月份星期/" itemprop="url">
-                  记不住的英文月份星期
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-30T01:15:13+08:00" content="2016-08-30">
-              2016-08-30
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>老是记不住英文的月份和星期以及它们的缩写, 所有只能这样了…</strong></p>
-<h2 id="月份"><a href="#月份" class="headerlink" title="月份"></a>月份</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">chinese</th>
-<th style="text-align:center">English</th>
-<th style="text-align:center">缩写</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">一月</td>
-<td style="text-align:center">January</td>
-<td style="text-align:center">Jan.</td>
-</tr>
-<tr>
-<td style="text-align:center">二月</td>
-<td style="text-align:center">February</td>
-<td style="text-align:center">Feb.</td>
-</tr>
-<tr>
-<td style="text-align:center">三月</td>
-<td style="text-align:center">March</td>
-<td style="text-align:center">Mar.</td>
-</tr>
-<tr>
-<td style="text-align:center">四月</td>
-<td style="text-align:center">April</td>
-<td style="text-align:center">Apr.</td>
-</tr>
-<tr>
-<td style="text-align:center">五月</td>
-<td style="text-align:center">May</td>
-<td style="text-align:center">May.</td>
-</tr>
-<tr>
-<td style="text-align:center">六月</td>
-<td style="text-align:center">June</td>
-<td style="text-align:center">Jun.</td>
-</tr>
-<tr>
-<td style="text-align:center">七月</td>
-<td style="text-align:center">July</td>
-<td style="text-align:center">Jul.</td>
-</tr>
-<tr>
-<td style="text-align:center">八月</td>
-<td style="text-align:center">August</td>
-<td style="text-align:center">Aug.</td>
-</tr>
-<tr>
-<td style="text-align:center">九月</td>
-<td style="text-align:center">September</td>
-<td style="text-align:center">Sept.</td>
-</tr>
-<tr>
-<td style="text-align:center">十月</td>
-<td style="text-align:center">October</td>
-<td style="text-align:center">Oct.</td>
-</tr>
-<tr>
-<td style="text-align:center">十一月</td>
-<td style="text-align:center">November</td>
-<td style="text-align:center">Nov.</td>
-</tr>
-<tr>
-<td style="text-align:center">十二月</td>
-<td style="text-align:center">December</td>
-<td style="text-align:center">Dec.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="星期"><a href="#星期" class="headerlink" title="星期"></a>星期</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">chinese</th>
-<th style="text-align:center">English</th>
-<th style="text-align:center">缩写</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">星期日</td>
-<td style="text-align:center">Sunday</td>
-<td style="text-align:center">Sun.</td>
-</tr>
-<tr>
-<td style="text-align:center">星期一</td>
-<td style="text-align:center">Monday</td>
-<td style="text-align:center">Mon.</td>
-</tr>
-<tr>
-<td style="text-align:center">星期二</td>
-<td style="text-align:center">Tuesday</td>
-<td style="text-align:center">Tues.</td>
-</tr>
-<tr>
-<td style="text-align:center">星期三</td>
-<td style="text-align:center">Wednesday</td>
-<td style="text-align:center">Wed.</td>
-</tr>
-<tr>
-<td style="text-align:center">星期四</td>
-<td style="text-align:center">Thursday</td>
-<td style="text-align:center">Thur.</td>
-</tr>
-<tr>
-<td style="text-align:center">星期五</td>
-<td style="text-align:center">Friday</td>
-<td style="text-align:center">Fri.</td>
-</tr>
-<tr>
-<td style="text-align:center">星期六</td>
-<td style="text-align:center">Saturday</td>
-<td style="text-align:center">Sat.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="天"><a href="#天" class="headerlink" title="天"></a>天</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">chinese</th>
-<th style="text-align:center">English</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">今天</td>
-<td style="text-align:center">Today</td>
-</tr>
-<tr>
-<td style="text-align:center">昨天</td>
-<td style="text-align:center">Yesterday</td>
-</tr>
-<tr>
-<td style="text-align:center">明天</td>
-<td style="text-align:center">The day before</td>
-</tr>
-<tr>
-<td style="text-align:center">后天</td>
-<td style="text-align:center">The day after tomorrow</td>
-</tr>
-</tbody>
-</table>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/28/OC 中的@符号/" itemprop="url">
-                  OC 中的@符号
+                <a class="post-title-link" href="/2016/08/28/ObjC-中的@符号/" itemprop="url">
+                  ObjC 中的@符号
                 </a>
               
             
@@ -964,8 +806,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/23/Objective-C Style Guide/" itemprop="url">
-                  Objective-C Style Guide
+                <a class="post-title-link" href="/2016/08/23/ObjC-Style-Guide/" itemprop="url">
+                  ObjC Style Guide
                 </a>
               
             
@@ -1126,8 +968,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/22/OC 中可变参数的原理/" itemprop="url">
-                  OC 中可变参数的原理
+                <a class="post-title-link" href="/2016/08/22/ObjC-中可变参数的原理/" itemprop="url">
+                  ObjC 中可变参数的原理
                 </a>
               
             
@@ -1170,7 +1012,7 @@
       
         
           
-            <p><strong>最近写了一个自定义的ActionSheet, 参考系统的UIActionSheet的创建方式设计API. 我们知道系统的UIAlertView是使用可变参数来接收最后一个参数的, 我一直也只是知道怎么用, 于是这次查资料了解了可变参数的实现原理.</strong></p>
+            <p><strong>最近写了一个自定义的 ActionSheet, 参考系统的 UIActionSheet 的创建方式设计 API. 我们知道系统的 UIAlertView 是使用可变参数来接收最后一个参数的, 我一直也只是知道怎么用, 于是这次查资料了解了可变参数的实现原理.</strong></p>
 <p>cocoa的API里使用到可变参数的地方</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">+ (<span class="keyword">instancetype</span>)arrayWithObjects:(ObjectType)firstObj, ... <span class="built_in">NS_REQUIRES_NIL_TERMINATION</span>;</div><div class="line">- (<span class="keyword">instancetype</span>)initWithTitle:(<span class="keyword">nullable</span> <span class="built_in">NSString</span> *)title message:(<span class="keyword">nullable</span> <span class="built_in">NSString</span> *)message delegate:(<span class="keyword">nullable</span> <span class="keyword">id</span> <span class="comment">/*&lt;UIAlertViewDelegate&gt;*/</span>)delegate cancelButtonTitle:(<span class="keyword">nullable</span> <span class="built_in">NSString</span> *)cancelButtonTitle otherButtonTitles:(<span class="keyword">nullable</span> <span class="built_in">NSString</span> *)otherButtonTitles, ... <span class="built_in">NS_REQUIRES_NIL_TERMINATION</span> <span class="built_in">NS_EXTENSION_UNAVAILABLE_IOS</span>(<span class="string">"Use UIAlertController instead."</span>);</div><div class="line">- (<span class="keyword">instancetype</span>)initWithTitle:(<span class="keyword">nullable</span> <span class="built_in">NSString</span> *)title delegate:(<span class="keyword">nullable</span> <span class="keyword">id</span>&lt;<span class="built_in">UIActionSheetDelegate</span>&gt;)delegate cancelButtonTitle:(<span class="keyword">nullable</span> <span class="built_in">NSString</span> *)cancelButtonTitle destructiveButtonTitle:(<span class="keyword">nullable</span> <span class="built_in">NSString</span> *)destructiveButtonTitle otherButtonTitles:(<span class="keyword">nullable</span> <span class="built_in">NSString</span> *)otherButtonTitles, ... <span class="built_in">NS_REQUIRES_NIL_TERMINATION</span> <span class="built_in">NS_EXTENSION_UNAVAILABLE_IOS</span>(<span class="string">"Use UIAlertController instead."</span>);</div></pre></td></tr></table></figure>
 <p><strong>首先我们来看看C语言中常用的哨兵参数的实现</strong></p>
@@ -1211,208 +1053,6 @@
 <p>本文Demo:<a href="https://github.com/guowilling/VariableArgument" target="_blank" rel="external"><strong>VariableArgument</strong></a></p>
 <p>自定义ActionSheet:<a href="https://github.com/guowilling/SRActionSheet" target="_blank" rel="external"><strong>SRActionSheet</strong></a></p>
 <p>Have Fun.</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/07/写在最前面的话/" itemprop="url">
-                  写在最前面的话
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-07T22:26:13+08:00" content="2016-08-07">
-              2016-08-07
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>为什么写博客?</strong></p>
-<p>自从入门iOS开发以来, 阅读了很多iOS开发领域大牛的博客, 比如: 喵神, 巧神, 破船, Kevin等, 从他们的博客当中学到了很多, 不仅仅是技术上的. 于是也想搭建自己的个人博客, 向他们学习, 希望能为后来学习相关知识的人提供些许帮助,也是记录自己的成长路程.</p>
-<p><strong>打算写些什么?</strong></p>
-<p>开始主要会写一些iOS开发相关的知识文章, 以后也可能会有其他开发方向甚至不是编程方向的内容.</p>
-<p><strong>打算怎么去写?</strong></p>
-<p>主要以总结和自己开发过程中遇到的坑如何解决的方式来记录. 希望为自己和大家提供的都是最佳实践方式.</p>
-<p>好了, 新的开始, 新的旅程, <strong>加油~GO!</strong> </p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/30/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-30T16:32:41+08:00" content="2016-07-30">
-              2016-07-30
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
           
         
@@ -1482,7 +1122,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1542,7 +1182,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

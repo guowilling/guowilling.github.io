@@ -1,0 +1,637 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Objective-C Style Guide最近看了很多OC方面的编码风格推荐, 个人认为编码规范不管对于个人开发还是团队开发都是非常重要的, 这里总结出来, 给大家提供一个参考.
+语言使用美式英语.
+12345// 推荐UIColor *myColor = [UIColor whiteColor];// 不推荐UIColor *myColour = [UIColor whiteColor];">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ObjC Style Guide">
+<meta property="og:url" content="http://yoursite.com/2016/08/23/ObjC-Style-Guide/index.html">
+<meta property="og:site_name" content="WILLING's BLOG">
+<meta property="og:description" content="Objective-C Style Guide最近看了很多OC方面的编码风格推荐, 个人认为编码规范不管对于个人开发还是团队开发都是非常重要的, 这里总结出来, 给大家提供一个参考.
+语言使用美式英语.
+12345// 推荐UIColor *myColor = [UIColor whiteColor];// 不推荐UIColor *myColour = [UIColor whiteColor];">
+<meta property="og:updated_time" content="2016-12-28T14:51:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ObjC Style Guide">
+<meta name="twitter:description" content="Objective-C Style Guide最近看了很多OC方面的编码风格推荐, 个人认为编码规范不管对于个人开发还是团队开发都是非常重要的, 这里总结出来, 给大家提供一个参考.
+语言使用美式英语.
+12345// 推荐UIColor *myColor = [UIColor whiteColor];// 不推荐UIColor *myColour = [UIColor whiteColor];">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/08/23/ObjC-Style-Guide/"/>
+
+  <title> ObjC Style Guide | WILLING's BLOG </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">WILLING's BLOG</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">never say never</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ObjC Style Guide
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-23T00:25:30+08:00" content="2016-08-23">
+              2016-08-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Objective-C-Style-Guide"><a href="#Objective-C-Style-Guide" class="headerlink" title="Objective-C Style Guide"></a>Objective-C Style Guide</h1><p>最近看了很多OC方面的编码风格推荐, 个人认为编码规范不管对于个人开发还是团队开发都是非常重要的, 这里总结出来, 给大家提供一个参考.</p>
+<h2 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h2><p>使用美式英语.</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 推荐</span></div><div class="line"><span class="built_in">UIColor</span> *myColor = [<span class="built_in">UIColor</span> whiteColor];</div><div class="line"></div><div class="line"><span class="comment">// 不推荐</span></div><div class="line"><span class="built_in">UIColor</span> *myColour = [<span class="built_in">UIColor</span> whiteColor];</div></pre></td></tr></table></figure>
+<h2 id="组织代码"><a href="#组织代码" class="headerlink" title="组织代码"></a>组织代码</h2><p>使用 <code>#pragma mark -</code> 组织代码.</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark - Lifecycle</span></div><div class="line"></div><div class="line">- (<span class="keyword">instancetype</span>)init &#123;&#125;</div><div class="line">- (<span class="keyword">void</span>)dealloc &#123;&#125;</div><div class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;&#125;</div><div class="line">- (<span class="keyword">void</span>)viewWillAppear:(<span class="built_in">BOOL</span>)animated &#123;&#125;</div><div class="line">- (<span class="keyword">void</span>)viewDidAppear:(<span class="built_in">BOOL</span>)animated &#123;&#125;</div><div class="line">- (<span class="keyword">void</span>)didReceiveMemoryWarning &#123;&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - Custom Accessors</span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setCustomProperty:(<span class="keyword">id</span>)value &#123;&#125;</div><div class="line">- (<span class="keyword">id</span>)customProperty &#123;&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - IBActions</span></div><div class="line"></div><div class="line">- (<span class="keyword">IBAction</span>)submitData:(<span class="keyword">id</span>)sender &#123;&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - Public</span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)publicMethod &#123;&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - Private</span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)privateMethod &#123;&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - UITableViewDataSource</span></div><div class="line"><span class="comment">//...</span></div><div class="line"></div><div class="line"><span class="meta">#pragma mark - UITableViewDelegate</span></div><div class="line"><span class="comment">//...</span></div><div class="line"></div><div class="line"><span class="meta">#pragma mark - NSCopying</span></div><div class="line"></div><div class="line">- (<span class="keyword">id</span>)copyWithZone:(<span class="built_in">NSZone</span> *)zone &#123;&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - NSObject</span></div><div class="line"></div><div class="line">- (<span class="built_in">NSString</span> *)description &#123;&#125;</div></pre></td></tr></table></figure>
+<h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">if (!error) &#123;</div><div class="line">    return success;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 不推荐</div><div class="line">if (!error)</div><div class="line">    return success;</div><div class="line">    </div><div class="line">// 或</div><div class="line">if (!error) return success;</div></pre></td></tr></table></figure>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>方法声明中, 应该在（-/+ 符号）的后面留一个空格.</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setExampleText:(<span class="built_in">NSString</span> *)text image:(<span class="built_in">UIImage</span> *)image;</div></pre></td></tr></table></figure>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul>
+<li><p>变量应该尽可能的用描述性的语言命名, 应该避免使用单字母来命名变量除了用于 <code>for()</code> 循环里.</p>
+</li>
+<li><p><strong>*</strong>表示变量是一个指针, 例如 <code>NSString *text</code> 不要写成 <code>NSString* text</code>, 也不要写成 <code>NSString * text</code>, 除非是在定义常量的情况下.</p>
+</li>
+<li><p>属性定义无论在何时都应该是用来代替实例变量定义, 应该避免直接使用实例变量, 除非在初始化方法中（<code>init</code>, <code>initWithCoder:</code>等), <code>dealloc</code> 方法中和实例变量对应的 <code>setter</code> 和 <code>getter</code> 方法中.</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">@interface NYTSection: NSObject</div><div class="line"></div><div class="line">@property (nonatomic) NSString *headLine;</div><div class="line"></div><div class="line">@end</div><div class="line"></div><div class="line">// 不推荐</div><div class="line">@interface NYTSection : NSObject &#123;</div><div class="line">    NSString * headLine;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h2><p>遵循 Apple 命名规范</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">UIButton *settingsButton;</div><div class="line"></div><div class="line">// 不推荐</div><div class="line">UIButton *setBut;</div></pre></td></tr></table></figure>
+<p>字母前缀(例如<code>SR</code>)应该用于类名和常量, 但是 Core Data 的实体名应该忽略前缀.<br>常量应该使用驼峰式命名规范, 要与类名有相关性要见面知意.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">static const NSTimeInterval SRNavigationFadeAnimationDuration = 0.2;</div><div class="line"></div><div class="line">// 不推荐</div><div class="line">static const NSTimeInterval fadetime = 1.7;</div></pre></td></tr></table></figure>
+<ul>
+<li>属性和局部变量应该使用开头字母小写的驼峰式命名规范.  </li>
+<li>实例变量应该使用开头字母小写的驼峰式命名规范，并且前缀是下划线.  </li>
+<li>局部变量不应该包含下划线.</li>
+</ul>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>注释应该是用来解释<strong>为什么</strong>, 而不是用来说明<strong>是什么</strong>.</p>
+<p><strong>init 和 dealloc</strong><br><code>dealloc</code> 方法应该放在 <code>implementation</code> 的上面, <code>init</code> 应该直接放在 <code>dealloc</code> 方法的下面.  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- (instancetype)init &#123;</div><div class="line">    self = [super init]; // or call the designated initalizer</div><div class="line">    if (self) &#123;</div><div class="line">        // Custom initialization</div><div class="line">    &#125;</div><div class="line">    return self;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="文字变量"><a href="#文字变量" class="headerlink" title="文字变量"></a>文字变量</h2><ul>
+<li><code>NSString</code>, <code>NSDictionary</code>, <code>NSArray</code>, 和 <code>NSNumber</code> 这些文字变量无论在何时都应该被用来创建不可变的实例对象.     </li>
+<li>注意不要把 <code>nil</code> 传入到了 <code>NSArray</code> 和 <code>NSDictionary</code> 中，因为这样会导致c程序崩溃.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">NSArray *names = @[@&quot;Brian&quot;, @&quot;Matt&quot;, @&quot;Chris&quot;, @&quot;Alex&quot;, @&quot;Steve&quot;, @&quot;Paul&quot;];</div><div class="line">NSDictionary *productManagers = @&#123;@&quot;iPhone&quot; : @&quot;Kate&quot;, @&quot;iPad&quot; : @&quot;Kamal&quot;, @&quot;Mobile Web&quot; : @&quot;Bill&quot;&#125;;</div><div class="line">NSNumber *shouldUseLiterals = @YES;</div><div class="line">NSNumber *buildingZIPCode = @10018;</div><div class="line"></div><div class="line">// 不推荐</div><div class="line">NSArray *names = [NSArray arrayWithObjects:@&quot;Brian&quot;, @&quot;Matt&quot;, @&quot;Chris&quot;, @&quot;Alex&quot;, @&quot;Steve&quot;, @&quot;Paul&quot;, nil];</div><div class="line">NSDictionary *productManagers = [NSDictionary dictionaryWithObjectsAndKeys: @&quot;Kate&quot;, @&quot;iPhone&quot;, @&quot;Kamal&quot;, @&quot;iPad&quot;, @&quot;Bill&quot;, @&quot;Mobile Web&quot;, nil];</div><div class="line">NSNumber *shouldUseLiterals = [NSNumber numberWithBool:YES];</div><div class="line">NSNumber *buildingZIPCode = [NSNumber numberWithInteger:10018];</div></pre></td></tr></table></figure>
+<h2 id="CGRect-函数"><a href="#CGRect-函数" class="headerlink" title="CGRect 函数"></a>CGRect 函数</h2><p>当访问 <code>x</code>, <code>y</code>, <code>width</code>，<code>height</code>，应该使用 <code>CGGeometry</code> 函数，而不应该直接访问结构的成员.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">CGRect frame = self.view.frame;</div><div class="line">CGFloat x = CGRectGetMinX(frame);</div><div class="line">CGFloat y = CGRectGetMinY(frame);</div><div class="line">CGFloat width = CGRectGetWidth(frame);</div><div class="line">CGFloat height = CGRectGetHeight(frame);</div><div class="line"></div><div class="line">// 不推荐</div><div class="line">CGRect frame = self.view.frame;</div><div class="line">CGFloat x = frame.origin.x;</div><div class="line">CGFloat y = frame.origin.y;</div><div class="line">CGFloat width = frame.size.width;</div><div class="line">CGFloat height = frame.size.height;</div></pre></td></tr></table></figure>
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>常量和宏都可以的情况下, 推荐使用常量.  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">static NSString * const NYTAboutViewControllerCompanyName = @&quot;The New York Times Company&quot;;</div><div class="line">static const CGFloat NYTImageThumbnailHeight = 50.0;</div><div class="line"></div><div class="line">// 不推荐</div><div class="line">#define CompanyName @&quot;The New York Times Company&quot;</div><div class="line">#define thumbnailHeight 2</div></pre></td></tr></table></figure>
+<h2 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">typedef NS_ENUM(NSInteger, SRRequestState) &#123;</div><div class="line">    SRRequestStateInactive,</div><div class="line">    SRRequestStateLoading</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="Case-语句"><a href="#Case-语句" class="headerlink" title="Case 语句"></a>Case 语句</h2><p>当在<code>switch</code>中使用枚举类型的时候 <code>default</code> 并不需要. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">SRLeftMenuTopItemType menuType = SRTLeftMenuTopItemMain;</div><div class="line">switch (menuType) &#123;</div><div class="line">	case RWTLeftMenuTopItemMain:</div><div class="line">		// ...</div><div class="line">		break;</div><div class="line">	case RWTLeftMenuTopItemShows:</div><div class="line">    	// ...</div><div class="line">    	break;</div><div class="line">	case RWTLeftMenuTopItemSchedule:</div><div class="line">    	// ...</div><div class="line">    	break;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="布尔值判断"><a href="#布尔值判断" class="headerlink" title="布尔值判断"></a>布尔值判断</h2><ul>
+<li>既然 <code>nil</code> 等同于 <code>NO</code> 那就没有必要在条件语句中进行比较  </li>
+<li>永远不要直接把某些东西与 <code>YES</code> 相比较.  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">if (!someObject) &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 不推荐</div><div class="line">if (someObject == nil) &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>BOOL</code> 的例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 推荐</div><div class="line">if (isAwesome)</div><div class="line">if (![someObject boolValue])</div><div class="line"></div><div class="line">// 不推荐</div><div class="line">if (isAwesome == YES) </div><div class="line">if ([someObject boolValue] == NO)</div></pre></td></tr></table></figure>
+<p><code>BOOL</code> 属性的名字应该取名为形容词, 属性名可以忽略 ‘is’ 前缀, 但 <code>getter</code> 方法要使用传统的命名.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property (assign, getter=isEditable) BOOL editable;</div></pre></td></tr></table></figure>
+<h2 id="单例"><a href="#单例" class="headerlink" title="单例"></a>单例</h2><p>单例对象应该使用安全线程机制来创建它们的共享实例.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">+ (instancetype)sharedInstance &#123;</div><div class="line">   static id sharedInstance = nil;</div><div class="line">   static dispatch_once_t onceToken;</div><div class="line">   dispatch_once(&amp;onceToken, ^&#123;</div><div class="line">      sharedInstance = [[self alloc] init];</div><div class="line">   &#125;);</div><div class="line">   return sharedInstance;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这能够防止某些时候可能出现各种程序崩溃的问题</p>
+<p><strong>(未完持续更新)</strong></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
+<p>官方 OC Style Guides:  </p>
+<ul>
+<li><a href="http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html" target="_blank" rel="external">The Objective-C Programming Language</a></li>
+<li><a href="https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CocoaFundamentals/Introduction/Introduction.html" target="_blank" rel="external">Cocoa Fundamentals Guide</a></li>
+<li><a href="https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html" target="_blank" rel="external">Coding Guidelines for Cocoa</a></li>
+<li><a href="http://developer.apple.com/library/ios/#documentation/iphone/conceptual/iphoneosprogrammingguide/Introduction/Introduction.html" target="_blank" rel="external">iOS App Programming Guide</a></li>
+</ul>
+<p>其他 OC Style Guides:</p>
+<ul>
+<li><a href="https://github.com/NYTimes/objective-c-style-guide" target="_blank" rel="external">New York Times</a></li>
+<li><a href="http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml" target="_blank" rel="external">Google</a></li>
+<li><a href="https://github.com/github/objective-c-conventions" target="_blank" rel="external">GitHub</a></li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/22/ObjC-中可变参数的原理/" rel="next" title="ObjC 中可变参数的原理">
+                <i class="fa fa-chevron-left"></i> ObjC 中可变参数的原理
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/28/ObjC-中的@符号/" rel="prev" title="ObjC 中的@符号">
+                ObjC 中的@符号 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/temp_icon.JPG"
+               alt="Willing Guo" />
+          <p class="site-author-name" itemprop="name">Willing Guo</p>
+          <p class="site-description motion-element" itemprop="description">没有什么事情可以成为你不去学习的理由.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/guowilling" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/guowilling" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Objective-C-Style-Guide"><span class="nav-number">1.</span> <span class="nav-text">Objective-C Style Guide</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#语言"><span class="nav-number">1.1.</span> <span class="nav-text">语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组织代码"><span class="nav-number">1.2.</span> <span class="nav-text">组织代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件语句"><span class="nav-number">1.3.</span> <span class="nav-text">条件语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">1.4.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">1.5.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命名"><span class="nav-number">1.6.</span> <span class="nav-text">命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">1.7.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文字变量"><span class="nav-number">1.8.</span> <span class="nav-text">文字变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CGRect-函数"><span class="nav-number">1.9.</span> <span class="nav-text">CGRect 函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常量"><span class="nav-number">1.10.</span> <span class="nav-text">常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#枚举类型"><span class="nav-number">1.11.</span> <span class="nav-text">枚举类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Case-语句"><span class="nav-number">1.12.</span> <span class="nav-text">Case 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#布尔值判断"><span class="nav-number">1.13.</span> <span class="nav-text">布尔值判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单例"><span class="nav-number">1.14.</span> <span class="nav-text">单例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">1.15.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Willing Guo</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
